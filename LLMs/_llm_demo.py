@@ -8,4 +8,3 @@ llm = OpenAI(model='gpt-3.5-turbo-instruct')
 result= llm.invoke("What is the capital of india?")
 
 print(result)
-
