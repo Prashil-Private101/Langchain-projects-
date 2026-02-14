@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-api_key = os.getenv("GOOGLE_API_KEY")
+api_key = os.getenv("HUGGINGFACEHUB_ACESSS_TOKEN")
 
 # Add this line to see the output
 if api_key:
