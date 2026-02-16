@@ -1,20 +1,23 @@
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
-ChatPromptTemplate([
+
+chat_template = ChatPromptTemplate([
     ('system', ' You are a helpful customer support agent '),
     MessagesPlaceholder(variable_name='chat_history'),
     ('human', '{query}')
 ])
 
-chat_hisory = []
+chat_history = []
 
 # load chat history 
 with open('Prompts/chat_history.txt') as f:
-    chat_hisory.extend(f.readlines())
+    chat_history.extend(f.readlines())
 
 
-print(chat_hisory)
+#print(chat_history)
 
 #create prompt
 
-chat_tem
+prompt = chat_template.invoke({'chat_history': chat_history , 'query' : 'where is my refund'})
+
+print(prompt)
