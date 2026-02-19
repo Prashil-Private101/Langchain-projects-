@@ -47,10 +47,11 @@ Bulky and heavy—not great for one-handed use
 Bloatware still exists in One UI
 
 Expensive compared to competitors
+
+reiwer reviewd by prashil
              """
              )
 
 print(result)
-print(result.summary)
-print(result.sentiment)
+
 
