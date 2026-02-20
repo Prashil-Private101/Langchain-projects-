@@ -26,15 +26,12 @@ template = PromptTemplate(template= ' give me the name age and city of the ficti
                partial_variables={'format_instruction':parser.get_format_instructions()}
                )
 
-prompt = template.format()
 
-print(prompt)
+chain = template | model | parser
 
-result = model.invoke(prompt)
-
-final_result = parser.parse(result.content)
+result = chain.invoke({})
 
 
-print(final_result)
+print(result)
 
-print(type(final_result))
+print(type(result))
