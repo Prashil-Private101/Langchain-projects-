@@ -33,10 +33,12 @@ template = PromptTemplate(
     partial_variables={'format_instruction' : parser.get_format_instructions()}
 )
 
-prompt = template.format(topic='black hole')
+chain = template | model | parser
 
-result = model.invoke(prompt)
 
-final_result = parser.parse(result.content)
 
-print(final_result)
+result = chain.invoke({'topic':'back hole'})
+
+
+
+print(result)
